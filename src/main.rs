@@ -3,7 +3,7 @@ use std::fs;
 fn main() {
     let config = parse_config();
 
-    let mut elves: Vec<isize> = Vec::new();
+    let mut elves: Vec<i32> = Vec::new();
     let mut index = 0;
     elves.push(0);
 
@@ -15,12 +15,13 @@ fn main() {
                 elves.push(0);
             },
             false => {
-                elves[index] += str::trim(line).parse::<isize>().unwrap();
+                elves[index] += str::trim(line).parse::<i32>().unwrap();
             }
         }
     }
-    let max = elves.iter().max().unwrap();
-    println!("{max}");
+    elves.sort();
+    println!("{}", elves.iter().max().unwrap());
+    println!("{:?}", elves[elves.len()-3..].iter().sum::<i32>());
 }
 
 struct Config {
