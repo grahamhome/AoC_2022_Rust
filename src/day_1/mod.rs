@@ -1,5 +1,5 @@
 use std::fs;
-use crate::Config;
+use crate::config::Config;
 
 pub fn run(config: Config) {
     let mut elves: Vec<i32> = Vec::new();

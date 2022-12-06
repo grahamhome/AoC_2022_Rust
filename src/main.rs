@@ -2,8 +2,6 @@ mod config;
 mod day_1;
 mod day_6;
 
-pub use config::Config;
-
 fn main() {
     let mut app_config = config::parse_config();
     //day_1::run(app_config);
