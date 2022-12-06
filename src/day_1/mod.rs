@@ -1,5 +1,5 @@
-use std::fs;
 use crate::config::Config;
+use std::fs;
 
 pub fn run(config: Config) {
     let mut elves: Vec<i32> = Vec::new();
@@ -12,7 +12,7 @@ pub fn run(config: Config) {
             true => {
                 index += 1;
                 elves.push(0);
-            },
+            }
             false => {
                 elves[index] += str::trim(line).parse::<i32>().unwrap();
             }
@@ -20,5 +20,5 @@ pub fn run(config: Config) {
     }
     elves.sort();
     println!("{}", elves.iter().max().unwrap());
-    println!("{:?}", elves[elves.len()-3..].iter().sum::<i32>());
+    println!("{:?}", elves[elves.len() - 3..].iter().sum::<i32>());
 }

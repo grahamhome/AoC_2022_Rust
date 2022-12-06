@@ -10,7 +10,7 @@ pub fn parse_config() -> Config {
 
     let file_path = args[1].clone();
 
-    let count: usize = match args.get(2){
+    let count: usize = match args.get(2) {
         Some(n) => n.parse::<usize>().unwrap(),
         None => 0,
     };
