@@ -1,21 +1,10 @@
-use std::env;
-
+mod config;
 mod day_1;
 
+pub use config::Config;
+
 fn main() {
-    let config = parse_config();
-    day_1::run(config)
+    let app_config = config::parse_config();
+    day_1::run(app_config)
 
-}
-
-pub struct Config {
-    file_path: String
-}
-
-fn parse_config() -> Config {
-    let args: Vec<String> = env::args().collect();
-
-    let file_path = args[1].clone();
-
-    Config { file_path }
 }
